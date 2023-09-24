@@ -1,0 +1,28 @@
+﻿@{
+	ViewData["Title"] = "information";
+	int index = 1;
+}
+
+<h1>Information</h1>
+<hr/>
+<a  href="/Employees/Add">Add new Employee</a>
+<table>
+	<tr>
+		<th>#</th>
+		<th>Name</th>
+		<th>Depatment</th>
+		<th>Email</th>
+	</tr>
+	@foreach(Employee emp in Model){
+		<tr>
+			<td>@(index++)</td>
+			<td>@emp.Name</td>
+			<td>@emp.department</td>
+			<td>@emp.Email</td>
+			<td>
+				<a href="/Employees/Details/@emp.Id">Details</a>
+			</td>
+
+		</tr>
+	}
+</table>
