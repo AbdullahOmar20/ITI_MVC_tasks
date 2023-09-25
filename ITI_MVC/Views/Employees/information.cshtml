@@ -5,13 +5,14 @@
 
 <h1>Information</h1>
 <hr/>
-<a  href="/Employees/Add">Add new Employee</a>
-<table>
+<a href="/Employees/Add" class="btn btn-outline-success">Add new Employee</a>
+<table class="table table-success table-striped table-hover table-bordered border-primary">
 	<tr>
 		<th>#</th>
 		<th>Name</th>
 		<th>Depatment</th>
 		<th>Email</th>
+		<th>Controls</th>
 	</tr>
 	@foreach(Employee emp in Model){
 		<tr>
@@ -20,7 +21,9 @@
 			<td>@emp.department</td>
 			<td>@emp.Email</td>
 			<td>
-				<a href="/Employees/Details/@emp.Id">Details</a>
+				<a href="/Employees/Details/@emp.Id"><i class="fa-solid fa-info"></i></a>
+				<a href="/Employees/Edit/@emp.Id"><i class="fa-solid fa-file-pen"></i></a>
+				<a href="/Employees/Delete/@emp.Id"><i class="fa-solid fa-trash"></i></a>
 			</td>
 
 		</tr>

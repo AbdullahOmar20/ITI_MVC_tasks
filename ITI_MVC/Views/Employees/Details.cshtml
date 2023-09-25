@@ -1,26 +1,26 @@
-﻿@{
-	ViewData["Title"] = "Details";
+﻿@Model Employee
+@{
+    ViewData["Title"] = "Details";
+    
 }
 <h1>Details</h1>
 
-<h3>Id</h3>
-<p>@Model.Id</p><br/>
 
-<h3>Name</h3>
-<p>@Model.Name</p><br/>
 
-<h3>Address</h3>
-<p>@Model.Adress</p><br/>
-
-<h3>Salary</h3>
-<p>@Model.Salary</p><br/>
-
-<h3>Department</h3>
-<p>@Model.department</p><br />
-
-<h3>Office Id</h3>
-<p>@Model.Office_Id</p><br />
-
-<h1> 
-	<a href="/Employees/information">Go bcak to list</a>
-</h1>
+<div class="card text-center" >
+    
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">@Model.Adress</li>
+        <li class="list-group-item">@Model.Salary</li>
+        <li class="list-group-item">@Model.department</li>
+        <li class="list-group-item">@Model.Office_Id</li>
+    </ul>
+    <div class="card-body">
+        <a href="/Employees/information" card-link" class="btn btn-success">Back To Info</a>
+        
+    </div>
+</div>

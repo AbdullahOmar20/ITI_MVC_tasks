@@ -1,0 +1,58 @@
+﻿@Model Employee
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form action="/Employees/EditONDB">
+	
+	<input value="@Model.Id" name="Id" hidden />
+	<div class="input-group mb-3">
+		<span class="input-group-text">Name</span>
+		<input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" />
+		<br />
+	</div>
+	<div class="input-group mb-3">
+		<span class="input-group-text">Address</span>
+		<input type="text" class="form-control" id="Adress" name="Adress" value="@Model.Adress" />
+		<br />
+	</div>
+	<div class="input-group mb-3">
+		<span class="input-group-text">Salary</span>
+		<input type="number" class="form-control" id="Salary" name="Salary" value="@Model.Salary" />
+		<br />
+	</div>
+	<div class="input-group mb-3">
+		<span class="input-group-text">department</span>
+		<input type="text" class="form-control" id="department" name="department" value="@Model.department" />
+		<br />
+	</div>
+	<div class="input-group mb-3">
+		<span class="input-group-text">Email</span>
+		<input type="text" class="form-control" id="Email" name="Email" value="@Model.Email" />
+		<span class="input-group-text">Password</span>
+		<input type="text" class="form-control" id="Password" name="Password" value="@Model.Password" />
+		<br />
+	</div>
+	<div class="input-group mb-3">
+		<span class="input-group-text">Office ID</span>
+		<select name="Office_Id" class="form-control" id="Office_id">
+		@foreach(Office off in ViewBag.Office ){
+			if(off.Id==Model.Office_Id){
+				<option value ="@off.Id" selected>@off.Name</option>
+			}
+			else
+			{
+				<option value ="@off.Id">@off.Name</option>
+			}
+		}
+		</select>
+		<br />
+	</div>
+	<div class="input-group mb-3">
+		<input type="submit" class="btn btn-outline-primary" value="Edit" />
+	</div>
+
+</form>
+
