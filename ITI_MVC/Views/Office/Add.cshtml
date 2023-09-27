@@ -1,0 +1,28 @@
+﻿@model Office
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add</h1>
+
+<form asp-controller="Office" asp-action="Insert" method="post">
+	<div class="input-group mb-3">
+		<span class="input-group-text">ID</span>
+		<input asp-for="Id" class="form-control"  />
+		<br />
+	</div>
+	<div class="input-group mb-3">
+		<span class="input-group-text">Name</span>
+		<input asp-for="Name" class="form-control"  />
+		<br />
+	</div>
+	<div class="input-group mb-3">
+		<span class="input-group-text">Location</span>
+		<input asp-for="Location" class="form-control"  />
+		<br />
+	</div>
+	<div class="input-group mb-3">
+		<input type="submit" class="btn btn-outline-primary" value="Add" />
+	</div>
+
+</form>

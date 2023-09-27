@@ -1,11 +1,13 @@
-﻿@{
+﻿@model List<Employee>
+@{
 	ViewData["Title"] = "information";
 	int index = 1;
 }
 
 <h1>Information</h1>
 <hr/>
-<a href="/Employees/Add" class="btn btn-outline-success">Add new Employee</a>
+<a asp-controller="Employees" asp-action="Add" class="btn btn-outline-success">Add new Employee</a>
+<a asp-controller="Validation" asp-action="Add" class="btn btn-outline-success">Add new Employee with validation</a>
 <table class="table table-success table-striped table-hover table-bordered border-primary">
 	<tr>
 		<th>#</th>
@@ -21,9 +23,9 @@
 			<td>@emp.department</td>
 			<td>@emp.Email</td>
 			<td>
-				<a href="/Employees/Details/@emp.Id"><i class="fa-solid fa-info"></i></a>
-				<a href="/Employees/Edit/@emp.Id"><i class="fa-solid fa-file-pen"></i></a>
-				<a href="/Employees/Delete/@emp.Id"><i class="fa-solid fa-trash"></i></a>
+				<a asp-controller="Employees" asp-action="Details" asp-route-id="@emp.Id"><i class="fa-solid fa-info"></i></a>
+				<a asp-controller="Employees" asp-action="Edit" asp-route-id="@emp.Id"><i class="fa-solid fa-file-pen"></i></a>
+				<a asp-controller="Employees" asp-action="Delete" asp-route-id="@emp.Id"><i class="fa-solid fa-trash"></i></a>
 			</td>
 
 		</tr>

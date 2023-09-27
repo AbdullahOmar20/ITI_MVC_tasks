@@ -5,12 +5,36 @@
       "PackagePath": "staticwebassets\\ITI_MVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\abdul\\Desktop\\ITI_MVC\\wwwroot\\assets\\favicon.ico",
+      "PackagePath": "staticwebassets\\assets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\abdul\\Desktop\\ITI_MVC\\wwwroot\\assets\\img\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdul\\Desktop\\ITI_MVC\\wwwroot\\assets\\img\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdul\\Desktop\\ITI_MVC\\wwwroot\\assets\\img\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\03.jpg"
+    },
+    {
       "Id": "C:\\Users\\abdul\\Desktop\\ITI_MVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\abdul\\Desktop\\ITI_MVC\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
       "Id": "C:\\Users\\abdul\\Desktop\\ITI_MVC\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\abdul\\Desktop\\ITI_MVC\\wwwroot\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\js\\scripts.js"
     },
     {
       "Id": "C:\\Users\\abdul\\Desktop\\ITI_MVC\\wwwroot\\js\\site.js",

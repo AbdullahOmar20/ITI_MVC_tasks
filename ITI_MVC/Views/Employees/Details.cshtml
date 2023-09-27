@@ -1,4 +1,4 @@
-﻿@Model Employee
+﻿@model Employee
 @{
     ViewData["Title"] = "Details";
     
@@ -8,19 +8,27 @@
 
 
 <div class="card text-center" >
+    <div class="row"><h1 class="text-bg-dark text-center">Details</h1></div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-8">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Name</h5>
+
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">@Model.Adress</li>
+                <li class="list-group-item">@Model.Salary</li>
+                <li class="list-group-item">@Model.department</li>
+                <li class="list-group-item">@Model.Office_Id</li>
+            </ul>
+            <div class="card-body">
+                <a href="/Employees/information" card-link" class="btn btn-success">Back To Info</a>
+
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row text-center "><h3 class="text-bg-dark text-center">Thank you for visiting us </h3></div>
     
-    <div class="card-body">
-        <h5 class="card-title">@Model.Name</h5>
-        
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">@Model.Adress</li>
-        <li class="list-group-item">@Model.Salary</li>
-        <li class="list-group-item">@Model.department</li>
-        <li class="list-group-item">@Model.Office_Id</li>
-    </ul>
-    <div class="card-body">
-        <a href="/Employees/information" card-link" class="btn btn-success">Back To Info</a>
-        
-    </div>
 </div>

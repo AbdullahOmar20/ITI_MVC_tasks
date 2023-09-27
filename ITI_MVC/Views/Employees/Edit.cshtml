@@ -1,58 +1,58 @@
-﻿@Model Employee
+﻿@model Employee
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<div class="container">
+	<div class="row"><h1 class="text-bg-dark text-center">Edit</h1></div>
+	<div class="row text-center">
+		<div class="col"></div>
+		<div class="col-8">
+		<form asp-controller="Employees" asp-action="EditONDB" method="post" >
 
-<form action="/Employees/EditONDB">
-	
-	<input value="@Model.Id" name="Id" hidden />
-	<div class="input-group mb-3">
-		<span class="input-group-text">Name</span>
-		<input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" />
-		<br />
-	</div>
-	<div class="input-group mb-3">
-		<span class="input-group-text">Address</span>
-		<input type="text" class="form-control" id="Adress" name="Adress" value="@Model.Adress" />
-		<br />
-	</div>
-	<div class="input-group mb-3">
-		<span class="input-group-text">Salary</span>
-		<input type="number" class="form-control" id="Salary" name="Salary" value="@Model.Salary" />
-		<br />
-	</div>
-	<div class="input-group mb-3">
-		<span class="input-group-text">department</span>
-		<input type="text" class="form-control" id="department" name="department" value="@Model.department" />
-		<br />
-	</div>
-	<div class="input-group mb-3">
-		<span class="input-group-text">Email</span>
-		<input type="text" class="form-control" id="Email" name="Email" value="@Model.Email" />
-		<span class="input-group-text">Password</span>
-		<input type="text" class="form-control" id="Password" name="Password" value="@Model.Password" />
-		<br />
-	</div>
-	<div class="input-group mb-3">
-		<span class="input-group-text">Office ID</span>
-		<select name="Office_Id" class="form-control" id="Office_id">
-		@foreach(Office off in ViewBag.Office ){
-			if(off.Id==Model.Office_Id){
-				<option value ="@off.Id" selected>@off.Name</option>
-			}
-			else
-			{
-				<option value ="@off.Id">@off.Name</option>
-			}
-		}
-		</select>
-		<br />
-	</div>
-	<div class="input-group mb-3">
-		<input type="submit" class="btn btn-outline-primary" value="Edit" />
-	</div>
+			<input value="@Model.Id" name="Id" hidden />
+			<div class="input-group mb-3">
+				<span class="input-group-text">Name</span>
+				<input asp-for="Name" class="form-control"  />
+				<br />
+			</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text">Address</span>
+				<input asp-for="Adress" class="form-control"  />
+				<br />
+			</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text">Salary</span>
+				<input asp-for="Salary" class="form-control"  />
+				<br />
+			</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text">department</span>
+				<input asp-for="department" class="form-control"  />
+				<br />
+			</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text">Email</span>
+				<input asp-for="Email" class="form-control"  />
+				<span class="input-group-text">Password</span>
+				<input asp-for="Password" class="form-control"  />
+				<br />
+			</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text">Office ID</span>
+				<select asp-for="Office_Id" asp-items="ViewBag.Office" class="form-control" >
+					
+				</select>
+				<br />
+			</div>
+			<div class="input-group mb-3 d-grid col-6 mx-auto">
+				<input type="submit" class="btn btn-outline-primary" value="Edit" />
+			</div>
 
-</form>
+		</form>
+		</div>
+		<div class="col"></div>
+	</div>
+	<div class="row"><h3 class="text-bg-dark text-center">Thank you for visiting us </h3></div>
+</div>
 

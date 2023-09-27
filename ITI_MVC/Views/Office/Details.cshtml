@@ -1,0 +1,38 @@
+﻿@model Office
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <div class="row"><h1 class="text-bg-dark text-center">Details</h1></div>
+    <div class="row">
+    <div class="col"></div>
+    <div class="col-8">
+    
+        <div class="card text-center">
+
+            <div class="card-body">
+                <h5 class="card-title">@Model.Id</h5>
+
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">@Model.Name</li>
+                <li class="list-group-item">@Model.Location</li>
+            </ul>
+            <div class="card-body">
+                <a href="/Office/Information" card-link" class="btn btn-success">Back To Info</a>
+
+            </div>
+        </div>
+        </div>
+    
+    
+    <div class="col"></div>
+    </div>
+    
+    <div class="row text-center "><h3 class="text-bg-dark text-center">Thank you for visiting us </h3></div>
+</div>
+
+
+
+

@@ -1,49 +1,47 @@
-﻿@Model Employee
+﻿@model Employee
 @{
 	ViewData["Title"] = "Add";
 }
-<form action="/Employees/Insert" >
+<form asp-action="Insert" asp-controller="Employees" method="post" >
 	<div class="input-group mb-3">
 		<span class="input-group-text">ID</span>
-	<input type="number" class="form-control" id="Id" name="Id" />
+	<input asp-for="Id" class="form-control"  />
 	<br/>
 	</div>
 	<div class="input-group mb-3">
 		<span class="input-group-text">Name</span>
-		<input type="text" class="form-control" id="Name" name="Name" />
+		<input asp-for="Name" class="form-control"  />
 	<br/>
 	</div>
 	<div class="input-group mb-3">
 		<span class="input-group-text">Address</span>
-		<input type="text" class="form-control" id="Adress" name="Adress" />
+		<input asp-for="Adress" class="form-control"  />
 	<br />
 	</div>
 	<div class="input-group mb-3">
 		<span class="input-group-text">Salary</span>
-		<input type="number" class="form-control" id="Salary" name="Salary" />
+		<input asp-for="Salary" class="form-control"  />
 	<br />
 	</div>
 	<div class="input-group mb-3">
 		<span class="input-group-text">department</span>
-		<input type="text" class="form-control" id="department" name="department" />
+		<input asp-for="department" class="form-control"  />
 	<br />
 	</div>
 	<div class="input-group mb-3">
 	
 		<span class="input-group-text">Email</span>
-		<input type="text" class="form-control" id="Email" name="Email" />
+		<input asp-for="Email" class="form-control"  />
 	
 		<span class="input-group-text">Password</span>
-		<input type="text" class="form-control" id="Password" name="Password" />
+		<input asp-for="Password" class="form-control"  />
 	<br />
 	</div>
 	<div class="input-group mb-3">
 		<span class="input-group-text">Office ID</span>
-		<select name="Office_Id" id="Office_id" class="form-select" aria-label="Default select example">
-		@foreach (Office off in ViewBag.Office)
-		{			
-				<option value="@off.Id">@off.Name</option>			
-		}
+		<select asp-for="Office_Id" asp-items="ViewBag.Office" class="form-select" aria-label="Default select example">
+			<option selected>Press to select</option>
+		
 	</select>
 	<br />
 	</div>

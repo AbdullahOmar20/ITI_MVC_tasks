@@ -1,0 +1,36 @@
+﻿@model Office
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container">
+	<div class="row"><h1 class="text-bg-dark text-center">Edit</h1></div>
+	<div class="row text-canter">
+		<div class="col"></div>
+		<div class="col-8">
+		<form asp-controller="Office" asp-action="EditONDB" method="post">
+
+			<input value="@Model.Id" name="Id" hidden />
+			<div class="input-group mb-3">
+				<span class="input-group-text">Name</span>
+				<input asp-for="Name" class="form-control"  />
+				<br />
+			</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text">Location</span>
+				<input asp-for="Location" class="form-control"  />
+				<br />
+			</div>
+
+				<div class="input-group mb-3 d-grid col-6 mx-auto">
+				<input type="submit" class="btn btn-outline-primary" value="Edit" />
+			</div>
+
+		</form>
+		
+		</div>
+		<div class="col"></div>
+	</div>
+	<div class="row text-center "><h3 class="text-bg-dark text-center">Thank you for visiting us </h3></div>
+</div>

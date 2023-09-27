@@ -1,0 +1,32 @@
+﻿@model List<Office>
+@{
+	ViewData["Title"] = "Information";
+	int index = 1;
+}
+
+<h1>Information</h1>
+<hr />
+<a href="/Office/Add" class="btn btn-outline-success">Add new Office</a>
+<table class="table table-success table-striped table-hover table-bordered border-primary">
+	<tr>
+		<th>#</th>
+		<th>Name</th>
+		<th>Location</th>
+		<th>Controls</th>
+	</tr>
+	@foreach (Office off in Model)
+	{
+		<tr>
+			<td>@(index++)</td>
+			<td>@off.Name</td>
+			<td>@off.Location</td>
+			<td>
+				<a asp-controller="Office" asp-action="Details" asp-route-id="@off.Id"><i class="fa-solid fa-info"></i></a>
+				<a asp-controller="Office" asp-action="Edit" asp-route-id="@off.Id"><i class="fa-solid fa-file-pen"></i></a>
+				<a asp-controller="Office" asp-action="Delete" asp-route-id="@off.Id"><i class="fa-solid fa-trash"></i></a>
+			</td>
+
+		</tr>
+	}
+</table>
+

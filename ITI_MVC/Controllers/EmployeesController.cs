@@ -1,5 +1,6 @@
 ﻿using ITI_MVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Identity.Client;
 
 namespace ITI_MVC.Controllers
@@ -26,17 +27,21 @@ namespace ITI_MVC.Controllers
             
             return View(employee);
         }
+        [HttpGet]
         public IActionResult Add() 
-        { 
-            ViewBag.Office = context.office.ToList();
+        {
+            var office = context.office.ToList();
+            ViewBag.Office = new SelectList(office,"Id","Name");
             return View();
         }
+        [HttpPost]
         public IActionResult Insert(Employee emp) 
         {
             context.employees.Add(emp);
             context.SaveChanges();
             return RedirectToAction("information");
         }
+        [HttpGet]
         public IActionResult Edit(int id )
         {
             Employee emp = context.employees.Where(i=>i.Id == id).SingleOrDefault();
@@ -44,9 +49,11 @@ namespace ITI_MVC.Controllers
 			{
 				return Content("Error");
 			}
-			ViewBag.Office = context.office.ToList();
+			var office = context.office.ToList();
+            ViewBag.Office= new SelectList(office,"Id","Name");
             return View(emp);
         }
+        [HttpPost]
         public IActionResult EditONDB(Employee emp)
         {
             Employee e = context.employees.SingleOrDefault(i => i.Id == emp.Id);
@@ -61,10 +68,13 @@ namespace ITI_MVC.Controllers
         public IActionResult Delete(int id)
         {
             Employee emp = context.employees.SingleOrDefault(i=>i.Id == id);
-            Emp_Project emp_pro = context.emp_Projs.SingleOrDefault(i => i.Emp_Id == id);
+            var emp_pro = context.emp_Projs.Where(i => i.Emp_Id == id);
             if(emp_pro != null) 
             {
-				context.emp_Projs.Remove(emp_pro);
+				foreach (var p in emp_pro)
+                {
+                    context.emp_Projs.Remove(p);
+                }
 			}
             
             context.employees.Remove(emp);
